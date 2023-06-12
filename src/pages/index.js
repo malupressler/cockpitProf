@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import defaultProfileImage from '../../src/defaultProfileImage.jpg'; 
 import Disciplinas from './materias'
 import CustomModal from './modal';
+import ParagrafoEditavel from './paragafoEditavel'
 
 function App() {
   const [materiais, setMateriais] = useState([]);
@@ -22,7 +23,7 @@ function App() {
     setExibirBotaoExclusao(true);
   };
   const handleExcluirFoto = () => {
-    setPerfilFoto(null);
+    setPerfilFoto(defaultProfileImage);
     setExibirBotaoExclusao(false);
   };
   
@@ -48,7 +49,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="home">
       <h1>Site do Professor Admin</h1>
       {perfilFoto && (
     <div className="linha-container">
@@ -59,16 +60,17 @@ function App() {
         {exibirBotaoExclusao && (
         <button type="button" class="btn btn-danger" onClick={handleExcluirFoto}>X</button>
       )}
-        <Disciplinas/>
-        <CustomModal/>
       </div>
       <div className="dados-container">
         <p>Nome: John Doe</p>
         <p>Email: johndoe@example.com</p>
         <p>Telefone: (123) 456-7890</p>
+        <ParagrafoEditavel/>
       </div>
     </div>
   )}
+   <Disciplinas/>
+    <CustomModal/>
 </div>
 
   );

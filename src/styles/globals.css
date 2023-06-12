@@ -1,0 +1,19 @@
+.dados-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px;
+}
+.linha-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+body{
+  margin: 10px;
+}
+.lista-arquivo {
+  align-items: center;
+  text-align: center;
+}
